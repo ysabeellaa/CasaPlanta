@@ -1,6 +1,5 @@
 import style from './Cardapio.module.scss';
-import { Card, products } from './Card/Card';
-
+import { Card, products } from '../../components/Card/Card';
 import EllipseBG from '../../../public/imgs/EllipseBg.png';
 import Chest from '../../../public/icons/chestBuy.png'
 import { BsSearch } from 'react-icons/bs';

@@ -1,0 +1,17 @@
+@use '../../stylesGlobal/variables';
+
+.button{
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    padding: 14px 16px;
+    width: 266px;
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+
+    img{
+        margin-right: 8px;
+        width: 16px;
+    }
+}

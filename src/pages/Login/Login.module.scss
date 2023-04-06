@@ -1,0 +1,76 @@
+@use '../../stylesGlobal/variables';
+
+
+body {
+    background-color: #DFDFDF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+
+    input {
+        width: 266px;
+        height: 40px;
+        border-radius: 8px;
+        border: 1px solid variables.$input_border;
+        padding: 8px 16px;
+        margin-bottom: 12px;
+        background-color: variables.$input_bkg;
+    }
+
+    a{
+        text-decoration: none;
+        color: black;
+        font-size: 0.75rem;
+        padding: 8px 0;
+        margin: 12px 0;
+    }
+
+    .inscrever{
+        &{
+            font-size: 0.75rem;
+            font-weight: 500;
+            
+        }
+        p:first-child a{
+            color: variables.$primary-color;
+            font-size: 0.75rem;
+        }
+    }
+
+
+}
+
+.entrar {
+    margin-bottom: 12px;
+    background-color: variables.$primary-color;
+    justify-content: center;
+}
+
+.fb_gg {
+    margin: 12px 0;
+}
+
+
+.ou {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // margin: 0px 0 0 ;
+
+    p {
+        margin: 0 10px;
+        font-size: 0.75rem;
+    }
+
+    hr {
+        border: 1px solid variables.$primary-color;
+        width: 100px;
+    }
+}
