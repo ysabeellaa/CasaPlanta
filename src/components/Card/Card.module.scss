@@ -1,12 +1,10 @@
-@use '../../../variables';
+@use '../../stylesGlobal/variables';
 
 .card{
     width: 165px;
     text-align: center;
     
-    & img{
-
-    }
+    
     & h2 {
         color: variables.$primary-color;
         font-size: variables.$font-size-subtitle1;

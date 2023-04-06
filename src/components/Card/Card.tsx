@@ -1,16 +1,16 @@
 import style from './Card.module.scss';
 import { AiOutlinePlus } from 'react-icons/ai';
 
-import img1 from '../../../../public/imgs/Rectangle 14.png';
-import img2 from '../../../../public/imgs/Rectangle 15.png';
-import img3 from '../../../../public/imgs/Rectangle 16.png';
-import img4 from '../../../../public/imgs/Rectangle 17.png';
-import img5 from '../../../../public/imgs/Rectangle 18.png';
-import img6 from '../../../../public/imgs/Rectangle 19.png';
-import img7 from '../../../../public/imgs/Rectangle 20.png';
-import img8 from '../../../../public/imgs/Rectangle 21.png';
-import img9 from '../../../../public/imgs/Rectangle 22.png';
-import img10 from '../../../../public/imgs/Rectangle 23.png';
+import img1 from '../../../public/imgs/Rectangle 14.png';
+import img2 from '../../../public/imgs/Rectangle 15.png';
+import img3 from '../../../public/imgs/Rectangle 16.png';
+import img4 from '../../../public/imgs/Rectangle 17.png';
+import img5 from '../../../public/imgs/Rectangle 18.png';
+import img6 from '../../../public/imgs/Rectangle 19.png';
+import img7 from '../../../public/imgs/Rectangle 20.png';
+import img8 from '../../../public/imgs/Rectangle 21.png';
+import img9 from '../../../public/imgs/Rectangle 22.png';
+import img10 from '../../../public/imgs/Rectangle 23.png';
 
 export const products = [
     {
