@@ -1,0 +1,29 @@
+@use '../../../variables';
+
+.card{
+    width: 165px;
+    text-align: center;
+    
+    & img{
+
+    }
+    & h2 {
+        color: variables.$primary-color;
+        font-size: variables.$font-size-subtitle1;
+        font-weight: 500;
+    }
+    & > p {
+        font-size: variables.$font-size-subtitle2;
+    }
+    & div {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        & p {
+            color: variables.$primary-color;
+            font-size: variables.$font-size-subtitle1;
+            font-weight: 400;          
+        }
+    }
+}
