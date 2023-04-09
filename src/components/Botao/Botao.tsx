@@ -6,6 +6,7 @@ interface IBotaoProps {
     color: string;
     img?: string;
     className?: string;
+    id?: string;
 }
 
 export default function Botao({ text, bkgColor, color, img, className }: IBotaoProps) {
