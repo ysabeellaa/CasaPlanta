@@ -13,15 +13,15 @@ function App() {
 
 
   return (
-    <UserProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <UserProvider>
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/cardapio" element={<Cardapio />} />
           <Route path="/perfil" element={<Perfil />} />
         </Routes>
-      </BrowserRouter>
-    </UserProvider>
+      </UserProvider>
+    </BrowserRouter>
   )
 }
 
