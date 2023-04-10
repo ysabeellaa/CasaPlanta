@@ -1,0 +1,36 @@
+div {
+
+    .imgBg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+    }
+
+    section {
+        background-color: #F4F4F4;
+        padding: 5rem 0 3rem 0;
+        border-radius: 30px;
+        width: 90%;
+        margin: 0 auto;
+
+    }
+}
+
+.user {
+    margin-left: 30px;
+    position: absolute;
+    top: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .user_img {
+        margin-right: 1rem;
+        border-radius: 50%;
+
+    }
+    h3{
+        margin-top: 50px;
+    }
+}
