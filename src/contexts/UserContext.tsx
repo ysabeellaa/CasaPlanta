@@ -30,7 +30,6 @@ export const UserContext = createContext({} as IUserContextData); /* iniciar con
 
 export function UserProvider({ children }: IUserProviderProps) {
     const [user, setUser] = useState<IUser | undefined>();
-    console.log(`Usuário contexto ${user}`)
     const navigate = useNavigate();
 
 

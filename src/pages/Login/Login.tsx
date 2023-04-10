@@ -26,8 +26,7 @@ export default function Login() {
     const { setUser } = useUserAuthenticationContext();
 
     function handleCallbackResponse(response: ICredential) {
-        console.log(response)
-        console.log(response.credential)
+        
 
         var userObject = jwt_decode(response.credential) as IUser;
         console.log(userObject)
@@ -38,7 +37,7 @@ export default function Login() {
     useEffect(() => {
         // global google
         google.accounts.id.initialize({
-            client_id: '584902510322-hv97imddr9la7fo7gqd89kk0v8khkkm2.apps.googleusercontent.com',
+            client_id: '584902510322-t85nflb9pb1s98h4m6a8j9qe9rovp1jo.apps.googleusercontent.com',
             callback: handleCallbackResponse
         });
 
@@ -47,9 +46,8 @@ export default function Login() {
             {
                 theme: 'outline',
                 size: 'large',
-                text: 'sign_in',
-                textColor: '#ffffff', // define a cor do texto
-                backgroundColor: 'red' // define a cor do fundo
+                shape: "retangle",
+                width: 266,
             }
         );
 
