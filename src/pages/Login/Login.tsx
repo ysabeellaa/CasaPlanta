@@ -23,17 +23,18 @@ interface IUser {
 //584902510322-hv97imddr9la7fo7gqd89kk0v8khkkm2.apps.googleusercontent.com 
 export default function Login() {
 
-    const { setUser } = useUserAuthenticationContext();
+    const { setUser } = useUserAuthenticationContext(); //desestruturação da função useUserAuthenticationContext() do contexto de autenticação de usuário para a variável setUser.
 
+    //recebe a resposta da autenticação do usuário e decodifica o token JWT da credencial. Em seguida, a função atualiza o estado do usuário com as informações decodificadas
     function handleCallbackResponse(response: ICredential) {
-        
-
         var userObject = jwt_decode(response.credential) as IUser;
-        console.log(userObject)
+        // console.log(userObject)
         setUser(userObject)
 
     }
 
+
+    // inicializar e renderizar o botão de login do Google. O método google.accounts.id.initialize() é usado para inicializar a API de autenticação do Google com o client_id fornecido. O método google.accounts.id.renderButton() é usado para renderizar o botão de login do Google na página. A callback handleCallbackResponse é chamada quando o usuário efetua o login com sucesso.
     useEffect(() => {
         // global google
         google.accounts.id.initialize({

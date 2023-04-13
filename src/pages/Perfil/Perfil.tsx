@@ -7,10 +7,8 @@ import imgEndereco from '../../../public/imgs/GPS.png';
 import imgPagamento from '../../../public/imgs/Pagamento.png';
 import imgHistorico from '../../../public/imgs/Histórico.png';
 import { useUserAuthenticationContext } from '../../contexts/UserContext';
-import { useNavigate } from 'react-router-dom';
-// import { UserContext } from "../../contexts/UserContext";
+import { Link, useNavigate } from 'react-router-dom';
 
-//const user = useContext(UserContext)?.[0];
 
 export default function Perfil() {
     const { isAuthenticated, user } = useUserAuthenticationContext();
@@ -36,11 +34,10 @@ export default function Perfil() {
                     </div>
                 )}
             </div>
-                <SectionPerfil img={imgDados} title='Dados' subtitle='Minhas informações de conta' icon={icon_seta} />
-                <SectionPerfil img={imgEndereco} title='Endereços' subtitle='Meus endereços de entrega' icon={icon_seta} />
-                <SectionPerfil img={imgPagamento} title='Pagamentos' subtitle='Minhas opções de pagamento' icon={icon_seta} />
-                <SectionPerfil img={imgHistorico} title='Histórico de pedidos' subtitle='Pedidos já contabilizados aqui' icon={icon_seta} />
-
+                <SectionPerfil img={imgDados} title='Dados' subtitle='Minhas informações de conta' icon={icon_seta} route={'/dados'}/>
+                <SectionPerfil img={imgEndereco} title='Endereços' subtitle='Meus endereços de entrega' icon={icon_seta} route={'/endereco'}/>
+                <SectionPerfil img={imgPagamento} title='Pagamentos' subtitle='Minhas opções de pagamento' icon={icon_seta}route={'/pagamento'} />
+                <SectionPerfil img={imgHistorico} title='Histórico de pedidos' subtitle='Pedidos já contabilizados aqui' icon={icon_seta} route={'/historico'} />
 
             </section>
         </div>
