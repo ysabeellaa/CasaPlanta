@@ -15,10 +15,7 @@ export default function Perfil() {
 
     if (!isAuthenticated) {
         window.location.replace('http://localhost:5173/login');
-
-
     }
-
 
     return (
 

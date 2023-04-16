@@ -1,0 +1,97 @@
+@use '../../stylesGlobal/variables';
+
+.close {
+    display: flex;
+    justify-content: flex-end;
+    
+
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    //background-color: red;
+    height: 100%;
+
+
+    .div_img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 100%;
+            height: 100%;
+
+        }
+    }
+
+    .div_content {
+        background-color: variables.$white;
+        border-radius: 5%;
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0.5rem 1rem;
+            color: variables.$primary-color;
+        }
+
+        p {
+            font-size: 1rem;
+            font-weight: 500;
+            margin: 0rem 1rem;
+
+        }
+
+        .last_p {
+            display: flex;
+            color: variables.$primary-color;
+            align-items: center;
+            justify-content: center;
+            margin: 0.5rem 0;
+        }
+    }
+
+    .count {
+        display: flex;
+        background-color: white;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 1rem;
+        border-radius: 5px;
+        padding: 0.5rem 0;
+
+        div {
+            display: flex;
+            align-items: center;
+            width: 50%;
+            justify-content: center;
+
+            span {
+                margin: 0 0.75rem;
+                width: 30%;
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        button {
+            background-color: variables.$secondary-color;
+            color: variables.$white;
+            border: none;
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            font-weight: 500;
+        }
+
+
+    }
+
+
+
+
+
+
+
+}

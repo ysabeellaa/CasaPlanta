@@ -9,6 +9,9 @@ import Dados from "./pages/Dados/Dados"
 import Enderecos from "./pages/Enderecos/Enderecos"
 import Pagamentos from "./pages/Pagamentos/Pagamentos"
 import HistoricoPedidos from "./pages/HistoricoPedidos/Historico"
+import ModalProduct from "./components/ModalProduct/ModalProduct"
+import CartProvider from "./contexts/CartContext"
+import Cart from "./pages/Cart/Cart"
 
 
 
@@ -18,17 +21,20 @@ function App() {
   return (
     <BrowserRouter>
       <UserProvider>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/cardapio" element={<Cardapio />} />
-          <Route path="/perfil" element={<Perfil />} />
-          <Route path="/dados" element={<Dados />} />
-          <Route path="/endereco" element={<Enderecos />} />
-          <Route path="/pagamento" element={<Pagamentos />} />
-          <Route path="/historico" element={<HistoricoPedidos />} />
-        </Routes>
+        <CartProvider>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/perfil" element={<Perfil />} />
+            <Route path="/cardapio" element={<Cardapio />} />
+            <Route path="/carrinho" element={<Cart/>} />
+            <Route path="/dados" element={<Dados />} />
+            <Route path="/endereco" element={<Enderecos />} />
+            <Route path="/pagamento" element={<Pagamentos />} />
+            <Route path="/historico" element={<HistoricoPedidos />} />
+          </Routes>
+        </CartProvider>
       </UserProvider>
-    </BrowserRouter>
+    </BrowserRouter >
   )
 }
 
