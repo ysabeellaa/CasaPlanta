@@ -39,7 +39,7 @@ export function Cardapio() {
             <div className={style.listagemCardapio}>
 
                 {filteredProducts.map(card => (
-                    <Card img={card.img} title={card.title} subtitle={card.subtitle} price={card.price} paragraphs={card.paragraphs} />
+                    <Card img={card.img} title={card.title} subtitle={card.subtitle} price={card.price} paragraphs={card.paragraphs} key={card.img}/>
                 ))}
 
             </div>

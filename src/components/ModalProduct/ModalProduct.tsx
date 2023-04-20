@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import Modal from 'react-modal'
 import { UserContext } from '../../contexts/UserContext';
 import CartProvider, { useCartContext } from '../../contexts/CartContext';
@@ -7,6 +7,10 @@ import { AiOutlineMinusCircle } from 'react-icons/ai';
 import { AiOutlineClose } from 'react-icons/ai';
 
 import styles from './ModalProduct.module.scss';
+//propriedade appElement no componente Modal para um nó DOM válido que represente o elemento raiz do aplicativo.
+
+Modal.setAppElement('#root');
+
 interface IModalProps {
     isOpen: boolean;
     handleCloseModal: () => void;
@@ -14,8 +18,10 @@ interface IModalProps {
     paragraphs: string[];
     title: string;
     price: number
+    count?: number;
     //modalKey: string;
 }
+
 
 export default function ModalProduct({
     isOpen,
@@ -28,11 +34,23 @@ export default function ModalProduct({
 }: IModalProps) {
 
     //cria duas variáveis: counters e setCounters, que são extraídas do valor retornado pelo useCartContext()
-    const { counters, setCounters } = useCartContext();
-    const [count, setCount] = useState<number>(counters[image] || 0);
+    const { counters, setCounters, setProducts } = useCartContext();
+    const [count, setCount] = useState<number>(counters[image] ||  1);
+   
+   
+   
 
 
+    function addProductIfBiggerThanZero() {
+            const newPrice = price * count;
+            const newProduct = { title: title, count: count, price: newPrice };
+            setProducts(prevProducts => [...prevProducts, newProduct]);
+        
+    }
 
+
+   
+    
     function incrementCounter() {
         const newCount = count + 1;
         setCount(newCount);
@@ -46,8 +64,12 @@ export default function ModalProduct({
         }
         setCount(newCount);
         setCounters((prev) => ({ ...prev, [image]: newCount }));
+        getPrice();
     }
-
+    
+    function getPrice(): number {
+        return price * count;
+         }
 
 
     return (
@@ -62,9 +84,9 @@ export default function ModalProduct({
             onRequestClose={handleCloseModal}>
             <div className={styles.close}>
                 <AiOutlineClose
-                
-                onClick={handleCloseModal}
-            />
+
+                    onClick={handleCloseModal}
+                />
             </div>
             <div className={styles.container}>
                 <div className={styles.div_img}>
@@ -77,7 +99,7 @@ export default function ModalProduct({
                     ))}
 
                     <div className={styles.last_p}>
-                        <p >{(price * count).toLocaleString('pt-BR', {
+                        <p >{getPrice().toLocaleString('pt-BR', {
                             style: 'currency',
                             currency: 'BRL',
                         })}</p>
@@ -89,13 +111,12 @@ export default function ModalProduct({
                         <span>{count}</span>
                         <AiOutlinePlusCircle onClick={incrementCounter} />
                     </div>
-                    <button>Adicionar</button>
-
+                    <button onClick={addProductIfBiggerThanZero}>Adicionar</button>
                 </div>
             </div>
         </Modal>
 
-        
+
     )
-  
+
 }
