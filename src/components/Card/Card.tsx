@@ -27,7 +27,8 @@ export const products = [
             "* Orgânicos",
             "* PANC",
             "* Planta medicinal",
-        ]
+        ],
+        id: 1
     },
     {
         img: img2,
@@ -39,7 +40,8 @@ export const products = [
             "* Sem a utilização de agrotóxicos",
             "* Verduras e legumes frescos",
             "* Cultivados por produtores locais"
-        ]
+        ],
+        id: 2
     },
     {
         img: img3,
@@ -51,7 +53,8 @@ export const products = [
             "* Ótima opção para cuidar da sua pele",
             "* Feito à base de óleo de jojoba",
             "* Rico em nutrientes e propriedades antioxidantes"
-        ]
+        ],
+        id: 3
     },
     {
         img: img4,
@@ -63,7 +66,8 @@ export const products = [
             "* Alimentação sem carne",
             "* Feita à base de beterraba",
             "* Alimentação mais equilibrada"
-        ]
+        ],
+        id: 4
     },
     {
         img: img5,
@@ -75,7 +79,8 @@ export const products = [
             "* À base de plantas",
             "* Utilização de castanhas",
             "* Textura suave e um sabor marcante"
-        ]
+        ],
+        id: 5
     },
     {
         img: img6,
@@ -87,7 +92,8 @@ export const products = [
             "* Sem adição de açúcares refinados",
             "* Utilização de castanhas",
             "* Alimentação mais saudável"
-        ]
+        ],
+        id: 6
     },
     {
         img: img7,
@@ -99,7 +105,9 @@ export const products = [
             "* Sem adição de açúcares refinados",
             "* Utilização de castanhas",
             "* Alimentação mais saudável"
-        ]
+        ], 
+        id: 7
+
     },
     {
         img: img8,
@@ -111,8 +119,8 @@ export const products = [
             "* Sem adição de açúcares refinados",
             "* Utilização de castanhas",
             "* Alimentação mais saudável"
-        ]
-    },
+        ],
+        id: 8    },
     {
         img: img9,
         title: "Café Nosso pai",
@@ -123,7 +131,8 @@ export const products = [
             "* Sem adição de açúcares refinados",
             "* Utilização de castanhas",
             "* Alimentação mais saudável"
-        ]
+        ],
+        id: 9
     },
     {
         img: img10,
@@ -135,7 +144,8 @@ export const products = [
             "* Sem adição de açúcares refinados",
             "* Utilização de castanhas",
             "* Alimentação mais saudável"
-        ]
+        ],
+        id: 10
     }
 
 ]
@@ -148,7 +158,7 @@ interface IProducts {
     subtitle: string,
     price: number,
     paragraphs: string[],
-
+    id: number
 }
 
 
@@ -173,7 +183,7 @@ export function Card(props: IProducts) {
             <div>
                 <AiOutlinePlus onClick={handleOpenModal} />
                 <p>R${props.price}</p>
-                <ModalProduct isOpen={isOpen} handleCloseModal={handleCloseModal} image={selectImage} paragraphs={props.paragraphs} title={props.title} price={props.price} />
+                <ModalProduct isOpen={isOpen} handleCloseModal={handleCloseModal} image={selectImage} paragraphs={props.paragraphs} title={props.title} price={props.price} id={props.id} />
             </div>
         </div>
     )

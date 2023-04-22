@@ -25,17 +25,25 @@ div {
             display: flex;
             justify-content: space-between;
             padding: 0rem 0.5rem;
+            align-items: center;
+            font-size: 0.9rem;
             p {
-                width: 50%;
+                width: 80%;
+                
             }
 
             div {
                 display: flex;
-                justify-content: space-around;
                 align-items: center;
-
-                span{
-                    padding: 0 0.25rem;
+                width: 50%;
+                justify-content: center;
+    
+                span {
+                    //margin: 0 0.25rem;
+                    width: 20%;
+                    display: flex;
+                    justify-content: center;
+                    padding: 0;
                 }
             }
         }
@@ -71,6 +79,7 @@ div {
         p{
             color: variables.$white;
             font-weight: 600;
+            text-decoration: wavy;
             
         }
     }

@@ -1,3 +1,5 @@
+
+
 import React, { useContext, useState, useEffect } from 'react'
 import Modal from 'react-modal'
 import { UserContext } from '../../contexts/UserContext';
@@ -19,6 +21,7 @@ interface IModalProps {
     title: string;
     price: number
     count?: number;
+    id: number;
     //modalKey: string;
 }
 
@@ -29,47 +32,43 @@ export default function ModalProduct({
     image,
     paragraphs,
     title,
-    price
+    price,
+    id
     //modalKey
 }: IModalProps) {
 
     //cria duas variáveis: counters e setCounters, que são extraídas do valor retornado pelo useCartContext()
-    const { counters, setCounters, setProducts } = useCartContext();
-    const [count, setCount] = useState<number>(counters[image] ||  1);
-   
-   
-   
+    const {setProducts, products } = useCartContext();
+
+
+
+    const [product, setProduct] = useState(products[id] || {title, id, price, count:0}) 
 
 
     function addProductIfBiggerThanZero() {
-            const newPrice = price * count;
-            const newProduct = { title: title, count: count, price: newPrice };
-            setProducts(prevProducts => [...prevProducts, newProduct]);
-        
+        if (product.count <= 0) {
+            return;
+        }
+        setProducts(prevProducts => ({...prevProducts, [id]: product}))
+
     }
 
 
-   
-    
     function incrementCounter() {
-        const newCount = count + 1;
-        setCount(newCount);
-        setCounters((prev) => ({ ...prev, [image]: newCount }));
+       
+        setProduct((prev) => ({ ...prev, count: prev.count + 1 }));
     }
 
     function decrementCounter() {
-        const newCount = count - 1;
-        if (newCount < 0) {
-            return;
+        if (product.count <= 0) {
+            return ;
         }
-        setCount(newCount);
-        setCounters((prev) => ({ ...prev, [image]: newCount }));
-        getPrice();
+        setProduct((prev) => ({ ...prev, count: prev.count - 1 }));
     }
-    
-    function getPrice(): number {
-        return price * count;
-         }
+
+    function getPrice(){
+        return product.count * product.price
+    }
 
 
     return (
@@ -108,10 +107,15 @@ export default function ModalProduct({
                 <div className={styles.count}>
                     <div>
                         <AiOutlineMinusCircle onClick={decrementCounter} />
-                        <span>{count}</span>
+                        <span>{product.count}</span>
                         <AiOutlinePlusCircle onClick={incrementCounter} />
+
                     </div>
-                    <button onClick={addProductIfBiggerThanZero}>Adicionar</button>
+                    <button onClick={() => {
+                        addProductIfBiggerThanZero();
+                        handleCloseModal();
+                    }}>Adicionar</button>
+
                 </div>
             </div>
         </Modal>

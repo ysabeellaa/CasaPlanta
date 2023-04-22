@@ -5,6 +5,7 @@ import Chest from '../../../public/icons/chestBuy.png'
 import { BsSearch } from 'react-icons/bs';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Footer from '../../components/Footer/Footer';
 
 export function Cardapio() {
 
@@ -23,6 +24,7 @@ export function Cardapio() {
 
 
     return (
+        
         <div>
             <img src={EllipseBG} className={style.imgBg} />
             <div className={style.header}>
@@ -30,6 +32,7 @@ export function Cardapio() {
                     <img src={Chest} alt="Chest Buy" />
                 </Link>
             </div>
+            
             <div className={style.boxSearch}>
                 <input type="search" name="filter" id="filter" placeholder='O que você procura?'
                     onChange={handleSearch}
@@ -39,10 +42,13 @@ export function Cardapio() {
             <div className={style.listagemCardapio}>
 
                 {filteredProducts.map(card => (
-                    <Card img={card.img} title={card.title} subtitle={card.subtitle} price={card.price} paragraphs={card.paragraphs} key={card.img}/>
+                    <Card img={card.img} title={card.title} subtitle={card.subtitle} price={card.price} paragraphs={card.paragraphs} key={card.img} id= {card.id}/>
                 ))}
 
             </div>
+
+            
+            <Footer></Footer>
         </div>
     )
 }

@@ -8,6 +8,7 @@ import imgPagamento from '../../../public/imgs/Pagamento.png';
 import imgHistorico from '../../../public/imgs/Histórico.png';
 import { useUserAuthenticationContext } from '../../contexts/UserContext';
 import { Link, useNavigate } from 'react-router-dom';
+import Footer from '../../components/Footer/Footer';
 
 
 export default function Perfil() {
@@ -37,6 +38,7 @@ export default function Perfil() {
                 <SectionPerfil img={imgHistorico} title='Histórico de pedidos' subtitle='Pedidos já contabilizados aqui' icon={icon_seta} route={'/historico'} />
 
             </section>
+            <Footer></Footer>
         </div>
     )
 }
