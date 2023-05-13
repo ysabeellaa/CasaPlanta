@@ -1,6 +1,5 @@
 import Botao from "../../components/Botao/Botao";
 import fb_icon from "../../../public/imgs/face_icon.png";
-import google_icon from "../../../public/imgs/google_icon.png";
 import style from "./Login.module.scss";
 import logo from "../../../public/imgs/Logo.png";
 import jwt_decode from "jwt-decode"
@@ -26,7 +25,7 @@ export default function Login() {
     
     const { setUser } = useUserAuthenticationContext(); //desestruturação da função useUserAuthenticationContext() do contexto de autenticação de usuário para a variável setUser.
     
-    //recebe a resposta da autenticação do usuário e decodifica o token JWT da credencial. Em seguida, a função atualiza o estado do usuário com as informações decodificadas
+    //recebe a resposta da autenticação do usuário e decodifica o token JWT da credencial. Em seguida, a função atualiza o estado do usuário com as informações decodificadas!
     function handleCallbackResponse(response: ICredential) {
         var userObject = jwt_decode(response.credential) as IUser;
         // console.log(userObject)
