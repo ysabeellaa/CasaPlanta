@@ -36,9 +36,10 @@ export default function Login() {
 
     
     // inicializar e renderizar o botão de login do Google. O método google.accounts.id.initialize() é usado para inicializar a API de autenticação do Google com o client_id fornecido. O método google.accounts.id.renderButton() é usado para renderizar o botão de login do Google na página. A callback handleCallbackResponse é chamada quando o usuário efetua o login com sucesso.
-    //console.log(import.meta.env.VITE_GOOGLE_CLIENT_ID);
     useEffect(() => {
         // global google
+        
+        console.log(import.meta.env.VITE_GOOGLE_CLIENT_ID);
         google.accounts.id.initialize({
             client_id: (import.meta.env.VITE_GOOGLE_CLIENT_ID),
             callback: handleCallbackResponse
